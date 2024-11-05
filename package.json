@@ -1,0 +1,17 @@
+{
+  "name": "scobject-muhasebe",
+  "version": "1.0.0",
+  "description": "Küçük ve orta ölçekli işletmeler için geliştirilmiş bu muhasebe programı; gelir-gider takibi, fatura oluşturma, borç-alacak yönetimi ve raporlama özellikleri sunar. Kullanıcı dostu arayüz ve güçlü analiz araçlarıyla finansal süreçleri kolaylaştırır, iş verimliliğini artırır.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1"
+  }
+}
