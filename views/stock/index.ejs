@@ -1,0 +1,365 @@
+<%- include('../partials/header.ejs') %>
+<div class="container-fluid">
+    <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+      <div class="container-fluid d-flex flex-row flex-column-fluid">
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+          <div class="d-flex flex-column flex-column-fluid">
+            <div id="kt_app_toolbar" class="app-toolbar pt-lg-9 pt-6">
+              <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack flex-wrap">
+                <div class="d-flex flex-stack flex-wrap gap-4 w-100">
+                  <div class="page-title d-flex flex-column gap-3 me-3">
+                    <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bolder fs-2x my-0">Stok Yönetimi</h1>
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
+                      <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                        <a href="../dist/index.html" class="text-gray-500">
+                          <i class="ki-duotone ki-home fs-3 text-gray-400 me-n1"></i>
+                        </a>
+                      </li>
+                      <li class="breadcrumb-item">
+                        <i class="ki-duotone ki-right fs-4 text-gray-700 mx-n1"></i>
+                      </li>
+                      <li class="breadcrumb-item text-gray-700 fw-bold lh-1">Stok Yönetimi</li>
+                      <li class="breadcrumb-item">
+                        <i class="ki-duotone ki-right fs-4 text-gray-700 mx-n1"></i>Ürünler
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 gap-lg-5">
+                    <!-- <a href=""  class="btn btn-danger"><span><i class="fa-solid fa-arrow-rotate-left"></i></span> Geri Dön </a> -->
+                     <a href=""class="btn btn-secondary"><i class="fa-solid fa-file-arrow-down"></i> Excele İndir</a>
+                    <a href="" class="btn btn-success"><i class="fa-regular fa-floppy-disk"></i> Yeni Ürün Ekle </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="kt_app_content" class="app-content pb-0">
+    <!-- Filtreleme -->
+    <div class="card shadow-sm">
+        <div class="card-header collapsible cursor-pointer rotate" data-bs-toggle="collapse" data-bs-target="#kt_docs_card_collapsible">
+            <h3 class="card-title"><span><i class="fa-solid fa-filter me-2"></i></span>Detaylı Filtreleme</h3>
+            <div class="card-toolbar rotate-180">
+                <i class="ki-duotone ki-down fs-1"></i>
+            </div>
+        </div>
+        <div id="kt_docs_card_collapsible" class="collapse show">
+            <div class="card-body">
+                  <form>
+                    <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-5">
+                            <label class="form-label">Ürün Kodu:</label>
+                            <input type="text" class="form-control" id="product_code" name="product_code" placeholder="Ürün Kodu Giriniz..."/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-5">
+                            <label class="form-label">Ürün Adı:</label>
+                            <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Ürün Adı Giriniz..."/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-5">
+                            <label class="form-label">Barkod Numarası</label>
+                            <input type="text" class="form-control" id="barcode" name="barcode" placeholder="Barkod Numarası Giriniz..."/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-5">
+                            <label class="form-label">Marka</label>
+                            <select class="form-select" data-control="select2" id="brand_id" name="brand_id" data-placeholder="Marka Seçiniz..">
+                                <option></option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-5">
+                            <label class="form-label">Kategori</label>
+                            <select class="form-select" data-control="select2" id="category_id" name="category_id" data-placeholder="Kategori Seçiniz..">
+                                <option></option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-5">
+                            <label class="form-label">Alt Kategori</label>
+                            <select class="form-select" data-control="select2" id="sub_category_id" name="sub_category_id" data-placeholder="Alt Kategori Seçiniz..">
+                                <option></option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-5">
+                            <label class="form-label">Durum</label>
+                            <select class="form-select" data-control="select2" id="status_id" name="status_id" data-placeholder="Durum Seçiniz...">
+                                <option></option>
+                                <option value="1">Option 1</option>
+                                <option value="2">Option 2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mt-2">
+                       <button class="btn btn-warning btn-sm float-end"><i class="fa-solid fa-filter"></i> Detaylı Filtrele</button>
+                    </div>
+                </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+    <!-- Tablo -->
+      <div class="card shadow-sm mt-5">
+        <div class="card-header">
+          <h3 class="card-title"><span><i class="fa-solid fa-table-list me-2"></i></span> Tüm Ürünler</h3>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <div class="table-responsive">
+              <table id="kt_datatable_zero_configuration" class="table table-row-bordered gy-5">
+                <thead>
+                  <tr class="fw-semibold fs-6 text-muted">
+                    <th>#</th>
+                    <th>Ürün Görseli</th>
+                    <th>Ürün Kodu</th>
+                    <th>Ürün Adı</th>
+                    <th>Barkod Numarası</th>
+                    <th>Marka</th>
+                    <th>Kategori</th>
+                    <th>Alt Kategori</th>
+                    <th>Durum</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <img src="https://picsum.photos/200/300" style="height: 40px;width: 90px;" alt="">
+                    </td>
+                    <td>525534</td>
+                    <td>Wiky Watch 4S Pembe</td>
+                    <td>20110425354331213</td>
+                    <td>Wiky Watch</td>
+                    <td>Elektronik</td>
+                    <td>Akıllı Saat</td>
+                    <td>
+                      <span class="badge badge-success">Aktif</span>
+                    </td>
+                    <td>
+                      <span class="badge badge-info">Görüntüle</span>
+                      <span class="badge badge-danger">Sil</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include('../partials/footer.ejs') %>
+<script>
+    $(document).ready(function(){
+        $("#kt_datatable_zero_configuration").DataTable();
+    })
+</script>

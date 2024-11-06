@@ -1,0 +1,212 @@
+<%- include('../partials/header.ejs') %>
+<div class="container-fluid">
+    <div class="app-wrapper flex-column flex-row-fluid" id="kt_app_wrapper">
+      <div class="container-fluid d-flex flex-row flex-column-fluid">
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+          <div class="d-flex flex-column flex-column-fluid">
+            <div id="kt_app_toolbar" class="app-toolbar pt-lg-9 pt-6">
+              <div id="kt_app_toolbar_container" class="app-container container-fluid d-flex flex-stack flex-wrap">
+                <div class="d-flex flex-stack flex-wrap gap-4 w-100">
+                  <div class="page-title d-flex flex-column gap-3 me-3">
+                    <h1 class="page-heading d-flex flex-column justify-content-center text-dark fw-bolder fs-2x my-0">Stok Yönetimi</h1>
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold">
+                      <li class="breadcrumb-item text-gray-700 fw-bold lh-1">
+                        <a href="../dist/index.html" class="text-gray-500">
+                          <i class="ki-duotone ki-home fs-3 text-gray-400 me-n1"></i>
+                        </a>
+                      </li>
+                      <li class="breadcrumb-item">
+                        <i class="ki-duotone ki-right fs-4 text-gray-700 mx-n1"></i>
+                      </li>
+                      <li class="breadcrumb-item text-gray-700 fw-bold lh-1">Stok Yönetimi</li>
+                      <li class="breadcrumb-item">
+                        <i class="ki-duotone ki-right fs-4 text-gray-700 mx-n1"></i>Yeni Ürün Ekle
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="d-flex align-items-center gap-3 gap-lg-5">
+                    <a href="" class="btn btn-danger">
+                      <span>
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                      </span> Geri Dön </a>
+                    <a href="" class="btn btn-success">
+                      <i class="fa-regular fa-floppy-disk"></i> Kaydet </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="kt_app_content" class="app-content pb-0">
+      <div class="card shadow-sm">
+        <div class="card-header">
+          <h3 class="card-title"><span><i class="fa-solid fa-cart-plus me-2"></i></span> Yeni Ürün Ekle</h3>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Ürün Kodu:</label>
+                  <div class="col-md-9">
+                    <input type="text" id="product_code" name="product_code" class="form-control" placeholder="Ürün Kodu Giriniz..." />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Ürün Adı:</label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Ürün Adını Giriniz..." />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Ürün Barkod Numarası:</label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" id="barcode_no" name="barcode_no" placeholder="Ürün Barkod/İmei Numarası Giriniz..." />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Ürün Kategorisi:</label>
+                  <div class="col-md-9">
+                    <select class="form-select" id="product_category_id" name="product_category_id" data-control="select2" data-placeholder="Ürün Kategorisini Seçiniz ...">
+                      <option></option>
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Ürün Alt Kategorisi:</label>
+                  <div class="col-md-9">
+                    <select class="form-select" id="product_subcategory_id" name="product_subcategory_id" data-control="select2" data-placeholder="Ürün Alt Kategorisini Seçiniz ...">
+                      <option></option>
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Ürün Markası:</label>
+                  <div class="col-md-9">
+                    <select class="form-select" id="product_brand_id" name="product_brand_id" data-control="select2" data-placeholder="Ürün Markası Seçiniz ...">
+                      <option></option>
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Ürün Birimi:</label>
+                  <div class="col-md-9">
+                    <select class="form-select" id="product_unit_id" name="product_unit_id" data-control="select2" data-placeholder="Ürün Birimi Seçiniz ...">
+                      <option></option>
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Kdv Oranı:</label>
+                  <div class="col-md-9">
+                    <select class="form-select" id="kdv" name="kdv" data-control="select2" data-placeholder="Kdv Oranı Seçiniz ...">
+                      <option></option>
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Ürün Satış Fiyatı:</label>
+                  <div class="col-md-9">
+                    <input type="number" id="sales_price" name="sales_price" class="form-control" placeholder="0.00" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Ürün Satın Alım Fiyatı:</label>
+                  <div class="col-md-9">
+                    <input type="number" id="purchase_price" name="purchase_price" class="form-control" placeholder="0.00" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Minimum Stok Seviyesi:</label>
+                  <div class="col-md-9">
+                    <input type="number" class="form-control" id="min_stock_level" name="min_stock_level" placeholder="0" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="row mb-3">
+                  <label class="form-label col-md-3">Maksimum Stok Seviyesi:</label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" id="max_stock_level" name="max_stock_level" placeholder="0" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row mb-3">
+                  <label class="form-label col-md-2">Ürün Resmi:</label>
+                  <div class="col-md-10">
+                    <input type="file" class="form-control" id="image_url" name="image_url" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row mb-3">
+                  <label class="form-label col-md-2">Son Kullanma Tarihi:</label>
+                  <div class="col-md-10">
+                    <input type="date" class="form-control" id="expiration_date" name="expiration_date" />
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row mb-3">
+                  <label class="form-label col-md-2">Ürün Durumu:</label>
+                  <div class="col-md-10">
+                    <select class="form-select" id="product_status_id" name="product_status_id" data-control="select2" data-placeholder="Ürün Durumu Seçiniz ...">
+                      <option></option>
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="mb-3">
+                  <label class="form-label">Ürün Açıklaması:</label>
+                  <textarea class="form-control" id="product_description" name="product_description" placeholder="Ürün Açıklaması Giriniz..." data-kt-autosize="true"></textarea>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include('../partials/footer.ejs') %>
+<script>
+    $(document).ready(function(){
+        
+    })
+</script>
