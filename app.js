@@ -15,6 +15,10 @@ app.get('/dashboard',DashboardRoutes);
 app.get('/products-view',ProductRoutes);
 app.get('/products-create',ProductRoutes);
 
+// Error 404 Sayfası
+app.get('/error/404',(req,res)=>{
+    res.render('error.ejs');
+})
 
 app.listen('2643',(err)=>{
     if(err)
