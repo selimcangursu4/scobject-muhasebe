@@ -2,6 +2,7 @@ const express = require('express');
 const ProductRoutes = express.Router();
 const ProductsController = require('../controllers/ProductsController');
 
+// Products Index
 ProductRoutes.get('/products-view', (req, res) => {
 
 	try {
@@ -14,6 +15,7 @@ ProductRoutes.get('/products-view', (req, res) => {
 	}
 });
 
+// New Add Product Page
 ProductRoutes.get('/products-create', (req, res) => {
 
 	try {
@@ -26,6 +28,7 @@ ProductRoutes.get('/products-create', (req, res) => {
 	}
 });
 
+// New Add Product Post Process
 ProductRoutes.post('/products-store', async (req, res) => {
 
 	try {

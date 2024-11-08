@@ -51,7 +51,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Kodu:</label>
                   <div class="col-md-9">
-                    <input type="text" id="product_code" name="product_code" class="form-control" placeholder="Ürün Kodu Giriniz..." />
+                    <input type="text" id="product_code" name="product_code" class="form-control" placeholder="Ürün Kodu Giriniz..." required />
                   </div>
                 </div>
               </div>
@@ -59,7 +59,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Adı:</label>
                   <div class="col-md-9">
-                    <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Ürün Adını Giriniz..." />
+                    <input type="text" class="form-control" id="product_name" name="product_name" placeholder="Ürün Adını Giriniz..."  required/>
                   </div>
                 </div>
               </div>
@@ -67,7 +67,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Barkod Numarası:</label>
                   <div class="col-md-9">
-                    <input type="text" class="form-control" id="barcode_no" name="barcode_no" placeholder="Ürün Barkod/İmei Numarası Giriniz..." />
+                    <input type="text" class="form-control" id="barcode_no" name="barcode_no" placeholder="Ürün Barkod/İmei Numarası Giriniz..." required />
                   </div>
                 </div>
               </div>
@@ -75,7 +75,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Kategorisi:</label>
                   <div class="col-md-9">
-                    <select class="form-select" id="product_category_id" name="product_category_id" data-control="select2" data-placeholder="Ürün Kategorisini Seçiniz ...">
+                    <select class="form-select" id="product_category_id" name="product_category_id" data-control="select2"  required data-placeholder="Ürün Kategorisini Seçiniz ...">
                       <option></option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
@@ -87,7 +87,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Alt Kategorisi:</label>
                   <div class="col-md-9">
-                    <select class="form-select" id="product_subcategory_id" name="product_subcategory_id" data-control="select2" data-placeholder="Ürün Alt Kategorisini Seçiniz ...">
+                    <select class="form-select" id="product_subcategory_id" name="product_subcategory_id" required data-control="select2" data-placeholder="Ürün Alt Kategorisini Seçiniz ...">
                       <option></option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
@@ -99,7 +99,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Markası:</label>
                   <div class="col-md-9">
-                    <select class="form-select" id="product_brand_id" name="product_brand_id" data-control="select2" data-placeholder="Ürün Markası Seçiniz ...">
+                    <select class="form-select" id="product_brand_id" name="product_brand_id" required data-control="select2" data-placeholder="Ürün Markası Seçiniz ...">
                       <option></option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
@@ -111,7 +111,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Birimi:</label>
                   <div class="col-md-9">
-                    <select class="form-select" id="product_unit_id" name="product_unit_id" data-control="select2" data-placeholder="Ürün Birimi Seçiniz ...">
+                    <select class="form-select" id="product_unit_id" name="product_unit_id" required data-control="select2" data-placeholder="Ürün Birimi Seçiniz ...">
                       <option></option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
@@ -123,7 +123,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Kdv Oranı:</label>
                   <div class="col-md-9">
-                    <select class="form-select" id="kdv" name="kdv" data-control="select2" data-placeholder="Kdv Oranı Seçiniz ...">
+                    <select class="form-select" id="kdv" name="kdv" data-control="select2" required data-placeholder="Kdv Oranı Seçiniz ...">
                       <option></option>
                       <option value="1">Option 1</option>
                       <option value="2">Option 2</option>
@@ -135,7 +135,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Satış Fiyatı:</label>
                   <div class="col-md-9">
-                    <input type="number" id="sales_price" name="sales_price" class="form-control" placeholder="0.00" />
+                    <input type="number" id="sales_price" name="sales_price" class="form-control" required placeholder="0.00" />
                   </div>
                 </div>
               </div>
@@ -143,7 +143,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Satın Alım Fiyatı:</label>
                   <div class="col-md-9">
-                    <input type="number" id="purchase_price" name="purchase_price" class="form-control" placeholder="0.00" />
+                    <input type="number" id="purchase_price" name="purchase_price" class="form-control" required placeholder="0.00" />
                   </div>
                 </div>
               </div>
@@ -151,7 +151,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Minimum Stok Seviyesi:</label>
                   <div class="col-md-9">
-                    <input type="number" class="form-control" id="min_stock_level" name="min_stock_level" placeholder="0" />
+                    <input type="number" class="form-control" id="min_stock_level" name="min_stock_level" required placeholder="0" />
                   </div>
                 </div>
               </div>
@@ -159,7 +159,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Maksimum Stok Seviyesi:</label>
                   <div class="col-md-9">
-                    <input type="text" class="form-control" id="max_stock_level" name="max_stock_level" placeholder="0" />
+                    <input type="text" class="form-control" id="max_stock_level" name="max_stock_level" required placeholder="0" />
                   </div>
                 </div>
               </div>
@@ -167,7 +167,7 @@
                 <div class="row mb-3">
                   <label class="form-label col-md-3">Ürün Temsili Fotoğrafı:</label>
                   <div class="col-md-9">
-                    <input type="file" class="form-control" id="image_url" name="image_url" />
+                    <input type="file" class="form-control" id="image_url" required name="image_url" />
                   </div>
                 </div>
               </div>
@@ -182,7 +182,7 @@
               <div class="col-md-12">
                 <div class="mb-3">
                   <label class="form-label">Ürün Açıklaması:</label>
-                  <textarea class="form-control" id="product_description" name="product_description" placeholder="Ürün Açıklaması Giriniz..." rows="7" data-kt-autosize="true"></textarea>
+                  <textarea class="form-control" id="product_description" name="product_description" required placeholder="Ürün Açıklaması Giriniz..." rows="7" data-kt-autosize="true"></textarea>
                 </div>
               </div>
             </div>
@@ -194,70 +194,78 @@
 
 <%- include('../partials/footer.ejs') %>
 <script>
-    $(document).ready(function() {
-      
-      // Ürün Ekleme
-    	$('#save').click(function(e) {
+$(document).ready(function() {
 
-    		e.preventDefault();
+// Ürün Ekleme
+$('#save').click(function(e) {
 
-    		const product_code = $('#product_code').val();
-    		const product_name = $('#product_name').val();
-    		const barcode_no = $('#barcode_no').val();
-    		const product_category_id = $('#product_category_id').val();
-    		const product_subcategory_id = $('#product_subcategory_id').val();
-    		const product_brand_id = $('#product_brand_id').val();
-    		const product_unit_id = $('#product_unit_id').val();
-    		const kdv = $('#kdv').val();
-    		const sales_price = $('#sales_price').val();
-    		const purchase_price = $('#purchase_price').val();
-    		const min_stock_level = $('#min_stock_level').val();
-    		const max_stock_level = $('#max_stock_level').val();
-    		const image_url = $('#image_url').val();
-    		const expiration_date = $('#expiration_date').val();
-    		const product_description = $('#product_description').val();
+  e.preventDefault();
 
-    		$.ajax({
-    			type: "POST",
-    			url: "/products-store",
-    			headers: {
-    				"Content-Type": "Application/json",
-    			},
-    			data: JSON.stringify({
-    				product_code: product_code,
-    				product_name: product_name,
-    				barcode_no: barcode_no,
-    				product_category_id: product_category_id,
-    				product_subcategory_id: product_subcategory_id,
-    				product_brand_id: product_brand_id,
-    				product_unit_id: product_unit_id,
-    				kdv: kdv,
-    				sales_price: sales_price,
-    				purchase_price: purchase_price,
-    				min_stock_level: min_stock_level,
-    				max_stock_level: max_stock_level,
-    				image_url: image_url,
-    				expiration_date: expiration_date,
-    				product_description: product_description
-    			}),
-    			success: function(response) {
-    				if (response.success) {
-    					console.log(response.message);
-    					swal({
-    						title: "Başarılı!",
-    						text: response.message,
-    						icon: "success",
-    					});
-    				} else {
-    					console.log(response.message);
-    					swal({
-    						title: "Başarılı!",
-    						text: response.message,
-    						icon: "error",
-    					});
-    				}
-    			}
-    		})
-    	})
-    })
+  const product_code = $('#product_code').val();
+  const product_name = $('#product_name').val();
+  const barcode_no = $('#barcode_no').val();
+  const product_category_id = $('#product_category_id').val();
+  const product_subcategory_id = $('#product_subcategory_id').val();
+  const product_brand_id = $('#product_brand_id').val();
+  const product_unit_id = $('#product_unit_id').val();
+  const kdv = $('#kdv').val();
+  const sales_price = $('#sales_price').val();
+  const purchase_price = $('#purchase_price').val();
+  const min_stock_level = $('#min_stock_level').val();
+  const max_stock_level = $('#max_stock_level').val();
+  const image_url = $('#image_url').val();
+  const expiration_date = $('#expiration_date').val();
+  const product_description = $('#product_description').val();
+
+  $.ajax({
+    type: "POST",
+    url: "/products-store",
+    headers: {
+      "Content-Type": "Application/json",
+    },
+    data: JSON.stringify({
+      product_code: product_code,
+      product_name: product_name,
+      barcode_no: barcode_no,
+      product_category_id: product_category_id,
+      product_subcategory_id: product_subcategory_id,
+      product_brand_id: product_brand_id,
+      product_unit_id: product_unit_id,
+      kdv: kdv,
+      sales_price: sales_price,
+      purchase_price: purchase_price,
+      min_stock_level: min_stock_level,
+      max_stock_level: max_stock_level,
+      image_url: image_url,
+      expiration_date: expiration_date,
+      product_description: product_description
+    }),
+    success: function(response) {
+      if (response.success) {
+        console.log(response.message);
+        Swal.fire({
+          text: response.message,
+          icon: "success",
+          buttonsStyling: false,
+          confirmButtonText: "Tamam !",
+          customClass: {
+            confirmButton: "btn btn-success"
+          }
+        });
+      } else {
+        console.log(response.message);
+        Swal.fire({
+          text: response.message,
+          icon: "error",
+          buttonsStyling: false,
+          confirmButtonText: "Tamam !",
+          customClass: {
+            confirmButton: "btn btn-danger"
+          }
+        });
+      }
+    }
+  })
+})
+})
 </script>
