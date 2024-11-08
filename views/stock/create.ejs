@@ -29,7 +29,7 @@
                       <span>
                         <i class="fa-solid fa-arrow-rotate-left"></i>
                       </span> Geri Dön </a>
-                    <a href="" class="btn btn-success">
+                    <a  id="save" type="button" class="btn btn-success">
                       <i class="fa-regular fa-floppy-disk"></i> Kaydet </a>
                   </div>
                 </div>
@@ -194,7 +194,70 @@
 
 <%- include('../partials/footer.ejs') %>
 <script>
-    $(document).ready(function(){
-        
+    $(document).ready(function() {
+      
+      // Ürün Ekleme
+    	$('#save').click(function(e) {
+
+    		e.preventDefault();
+
+    		const product_code = $('#product_code').val();
+    		const product_name = $('#product_name').val();
+    		const barcode_no = $('#barcode_no').val();
+    		const product_category_id = $('#product_category_id').val();
+    		const product_subcategory_id = $('#product_subcategory_id').val();
+    		const product_brand_id = $('#product_brand_id').val();
+    		const product_unit_id = $('#product_unit_id').val();
+    		const kdv = $('#kdv').val();
+    		const sales_price = $('#sales_price').val();
+    		const purchase_price = $('#purchase_price').val();
+    		const min_stock_level = $('#min_stock_level').val();
+    		const max_stock_level = $('#max_stock_level').val();
+    		const image_url = $('#image_url').val();
+    		const expiration_date = $('#expiration_date').val();
+    		const product_description = $('#product_description').val();
+
+    		$.ajax({
+    			type: "POST",
+    			url: "/products-store",
+    			headers: {
+    				"Content-Type": "Application/json",
+    			},
+    			data: JSON.stringify({
+    				product_code: product_code,
+    				product_name: product_name,
+    				barcode_no: barcode_no,
+    				product_category_id: product_category_id,
+    				product_subcategory_id: product_subcategory_id,
+    				product_brand_id: product_brand_id,
+    				product_unit_id: product_unit_id,
+    				kdv: kdv,
+    				sales_price: sales_price,
+    				purchase_price: purchase_price,
+    				min_stock_level: min_stock_level,
+    				max_stock_level: max_stock_level,
+    				image_url: image_url,
+    				expiration_date: expiration_date,
+    				product_description: product_description
+    			}),
+    			success: function(response) {
+    				if (response.success) {
+    					console.log(response.message);
+    					swal({
+    						title: "Başarılı!",
+    						text: response.message,
+    						icon: "success",
+    					});
+    				} else {
+    					console.log(response.message);
+    					swal({
+    						title: "Başarılı!",
+    						text: response.message,
+    						icon: "error",
+    					});
+    				}
+    			}
+    		})
+    	})
     })
 </script>

@@ -14,6 +14,7 @@ app.get('/dashboard',DashboardRoutes);
 // Stok Yönetimi -> Ürün Yönetimi
 app.get('/products-view',ProductRoutes);
 app.get('/products-create',ProductRoutes);
+app.post('/products-store',ProductRoutes);
 
 // Error 404 Sayfası
 app.get('/error/404',(req,res)=>{
